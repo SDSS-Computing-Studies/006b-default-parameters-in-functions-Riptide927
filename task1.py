@@ -1,4 +1,6 @@
 #!python3
 
-import assignment
+import assignment as a
+
+a.tempConversion(3,"F")
 
