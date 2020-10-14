@@ -15,10 +15,16 @@ def factorPair(x,y):
     return lis
 
 def cosineLaw(A,B,C,oppositeSide=True):
-    if oppositeSide == False:
-       return solution(quadratic(1,B,C))
+    if A>=B:
+        b = A
+        a = B
     else:
-        c = math.sqrt((A**2)+(B**2)-(2*A*B*math.cos(toRadians(C))))
+        a = A
+        b = B
+    if oppositeSide == False:
+       return solution(quadratic(1,(-2*a*math.cos(toRadians(C))),(a**2)-(b**2)))
+    else:
+        c = math.sqrt((a**2)+(b**2)-(2*a*b*math.cos(toRadians(C))))
         return c
           
 def toRadians(x):
